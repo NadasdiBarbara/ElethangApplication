@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ElethangApplication</string>
+    <string name="open">Nyitva</string>
+    <string name="close">Zarva</string>
+</resources>

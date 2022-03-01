@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/house"
+            android:title="House"
+            android:icon="@drawable/ic_house"/>
+        <item android:id="@+id/mood"
+            android:title="Mood"
+            android:icon="@drawable/ic_mood"/>
+        <item android:id="@+id/share"
+            android:title="Share"
+            android:icon="@drawable/ic_share"/>
+
+    </group>
+
+</menu>
