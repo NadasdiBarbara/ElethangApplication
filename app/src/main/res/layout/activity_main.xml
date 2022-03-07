@@ -26,8 +26,25 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
-        />
+        android:id="@+id/fragment_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomNavigationView"
+                android:layout_alignParentBottom="true"
+                android:background="@color/purple_500"
+                app:itemIconTint="@color/white"
+                app:itemTextColor="@color/white"
+                app:menu="@menu/bottom_menu" />
+        </RelativeLayout>
+
+
+    </FrameLayout>
 </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
