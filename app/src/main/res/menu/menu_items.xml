@@ -56,14 +56,4 @@
     </item>
 
 
-
-    <item android:title="Valmi">
-        <menu>
-        <item android:id="@+id/house"
-            android:title="House"
-            android:icon="@drawable/ic_house"/>
-        </menu>
-
-    </item>
-
 </menu>

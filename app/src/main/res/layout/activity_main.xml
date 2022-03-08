@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
     tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@color/white"
+    android:orientation="horizontal">
 
 <LinearLayout
     android:layout_width="wrap_content"
@@ -16,31 +17,36 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_200"
+        android:background="@color/background"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextColor="#FFFFFF"
         android:elevation="4dp"
         android:id="@+id/toolbar"
+        app:menu="@menu/menu"
         />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragment_container">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bottomNavigationView"
                 android:layout_alignParentBottom="true"
-                android:background="@color/purple_500"
+                android:background="@color/background"
                 app:itemIconTint="@color/white"
                 app:itemTextColor="@color/white"
                 app:menu="@menu/bottom_menu" />
+
+
         </RelativeLayout>
 
 
@@ -54,6 +60,8 @@
         android:id="@+id/navigationView"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/menu_items"/>
+
+
 
 
 
