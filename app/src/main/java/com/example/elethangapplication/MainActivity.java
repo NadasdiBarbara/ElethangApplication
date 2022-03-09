@@ -19,6 +19,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -30,8 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private BottomNavigationView bottomNavigationView;
+    private TextView textViewHome;
+    private FrameLayout fragmentContainer;
 
-    private static int SPLASH_TIME_OUT = 5000;
 
 
     @Override
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        //spashActiv();
+
         //hambiicon
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this,drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -49,68 +53,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNav);
 
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.exit){
-            AlertDialog.Builder builder = new  AlertDialog.Builder(MainActivity.this);
-            builder.setMessage("Biztos kiszeretne lépni?");
-            builder.setCancelable(true);
-
-            builder.setNegativeButton("Igen", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
-                }
-            });
-
-            builder.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.cancel();
-                }
-            });
-            AlertDialog alertDialog = builder.create();
-            alertDialog.show();
-        }
-        return true;
-    }
-
-    private void spashActiv() {
-        new Handler(). postDelayed(new Runnable() {
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this, HomeFragment.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            public boolean onMenuItemClick(MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.exit){
+                    AlertDialog.Builder builder = new  AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage("Biztos kiszeretne lépni?");
+                    builder.setCancelable(true);
+
+                    builder.setNegativeButton("Igen", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    });
+
+                    builder.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
+                return true;
             }
-        }, SPLASH_TIME_OUT);
+        });
+
+
     }
+
 
     public  void  init(){
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        textViewHome = findViewById(R.id.textViewHome);
+        fragmentContainer = findViewById(R.id.fragment_container);
     }
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNav = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.bottom_kedcencek:
-                    replaceFragment(new KedvencekFragment());
+                    //replaceFragment(new KedvencekFragment());
+                    fragmentContainer.setVisibility(View.VISIBLE);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new KedvencekFragment()).commit();
+                    textViewHome.setVisibility(View.GONE);
                     break;
                 case R.id.bottom_home:
-                    replaceFragment(new HomeFragment());
+                    //replaceFragment(new HomeFragment());
+                    textViewHome.setVisibility(View.VISIBLE);
+                    fragmentContainer.setVisibility(View.GONE);
                     break;
                 case R.id.bottom_beallitasok:
                     replaceFragment(new BeallitasokFragment());
