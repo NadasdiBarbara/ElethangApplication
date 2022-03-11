@@ -110,7 +110,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragmentContainer.setVisibility(View.GONE);
                     break;
                 case R.id.bottom_beallitasok:
-                    replaceFragment(new BeallitasokFragment());
+                    //replaceFragment(new BeallitasokFragment());
+                    fragmentContainer.setVisibility(View.VISIBLE);
+                    textViewHome.setVisibility(View.GONE);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BeallitasokFragment()).commit();
                     break;
             }
             return true;
@@ -121,46 +124,79 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.cat:
-                replaceFragment(new CatFragment());
+                //replaceFragment(new CatFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CatFragment()).commit();
                 break;
             case R.id.dog:
-                replaceFragment(new DogFragment());
+                //replaceFragment(new DogFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DogFragment()).commit();
                 break;
             case R.id.segitseg:
-                replaceFragment(new HogyanSegithetszFragment());
+                //replaceFragment(new HogyanSegithetszFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HogyanSegithetszFragment()).commit();
                 break;
             case R.id.orokbefogadhatoak:
-                replaceFragment(new OrokbefogadhatoFragment());
+                //replaceFragment(new OrokbefogadhatoFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrokbefogadhatoFragment()).commit();
                 break;
             case R.id.virtualis:
-                replaceFragment(new VirtualisFragment());
+                //replaceFragment(new VirtualisFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new VirtualisFragment()).commit();
                 break;
             case R.id.esemenyek:
-                replaceFragment(new EsemenyekFragment());
+                //replaceFragment(new EsemenyekFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EsemenyekFragment()).commit();
                 break;
             case R.id.programok:
-                replaceFragment(new ProgramokFragment());
+                //replaceFragment(new ProgramokFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramokFragment()).commit();
                 break;
             case R.id.rolunk:
-                replaceFragment(new RolunkFragment());
+                //replaceFragment(new RolunkFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RolunkFragment()).commit();
                 break;
             case R.id.csapatunk:
-                replaceFragment(new CsapatunkFragment());
+                //replaceFragment(new CsapatunkFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CsapatunkFragment()).commit();
                 break;
             case R.id.feltetel:
-                replaceFragment(new FeltetelFragment());
+                //replaceFragment(new FeltetelFragment());
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FeltetelFragment()).commit();
                 break;
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+    /*
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
     }
+    */
+     
 
 
 }
