@@ -8,11 +8,37 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CatFragment extends Fragment {
+    private RecyclerView recyclerView;
+    private CatAdapter catAdapter;
+    private List<Cat> catList;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_cat, container, false);
+        View view = inflater.inflate(R.layout.fragment_cat, container, false);
+        init(view);
+        recyclerView.setAdapter(catAdapter);
+        return view;
+    }
+
+    public void init(View view){
+        recyclerView = view.findViewById(R.id.recyclerViewCats);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        catList=new ArrayList<>();
+        catList.add(new Cat("Cica", "Cicss"));
+        catList.add(new Cat("Cica", "Cicss"));
+        catList.add(new Cat("Cica", "Cicsssa"));
+        catList.add(new Cat("Cica", "Cicsssa"));
+        catList.add(new Cat("Cica", "Cicsssaaa"));
+        catAdapter= new CatAdapter(getContext(),catList);
     }
 }

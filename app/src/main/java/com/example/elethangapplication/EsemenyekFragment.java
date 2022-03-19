@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 
 
 public class EsemenyekFragment extends Fragment {
+    String[] felsorolas;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_esemenyek, container, false);
+        View view = inflater.inflate(R.layout.fragment_esemenyek, container, false);
+
+
+        return view;
     }
 }
