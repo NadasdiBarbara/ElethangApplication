@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.hogyansegits;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class HomeFragment extends Fragment {
+import com.example.elethangapplication.R;
+
+public class HogyanSegithetszFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root=  inflater.inflate(R.layout.fragment_hogyansegithetsz,container, false);
         return root;
+
     }
 }

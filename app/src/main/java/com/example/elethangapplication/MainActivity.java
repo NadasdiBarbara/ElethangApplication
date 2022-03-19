@@ -7,17 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -25,20 +17,26 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.elethangapplication.cat.CatFragment;
+import com.example.elethangapplication.csapatunk.CsapatunkFragment;
+import com.example.elethangapplication.dog.DogFragment;
+import com.example.elethangapplication.esemenyek.EsemenyekFragment;
+import com.example.elethangapplication.feltetel.FeltetelFragment;
+import com.example.elethangapplication.hogyansegits.HogyanSegithetszFragment;
+import com.example.elethangapplication.kedvencek.KedvencekFragment;
+import com.example.elethangapplication.orokbefogadhato.OrokbefogadhatoFragment;
+import com.example.elethangapplication.programok.ProgramokFragment;
+import com.example.elethangapplication.rolunk.RolunkFragment;
+import com.example.elethangapplication.virtualis.VirtualisFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private BottomNavigationView bottomNavigationView;
     private TextView textViewHome;
     private FrameLayout fragmentContainer;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNav);
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -94,35 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         textViewHome = findViewById(R.id.textViewHome);
         fragmentContainer = findViewById(R.id.fragment_container);
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener bottomNav = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.bottom_kedcencek:
-                    //replaceFragment(new KedvencekFragment());
-                    fragmentContainer.setVisibility(View.VISIBLE);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new KedvencekFragment()).commit();
-                    textViewHome.setVisibility(View.GONE);
-                    break;
-                case R.id.bottom_home:
-                    //replaceFragment(new HomeFragment());
-                    textViewHome.setVisibility(View.VISIBLE);
-                    fragmentContainer.setVisibility(View.GONE);
-                    break;
-                case R.id.bottom_beallitasok:
-                    //replaceFragment(new BeallitasokFragment());
-                    fragmentContainer.setVisibility(View.VISIBLE);
-                    textViewHome.setVisibility(View.GONE);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BeallitasokFragment()).commit();
-                    break;
-            }
-            return true;
-        }
-    };
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -186,6 +157,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentContainer.setVisibility(View.VISIBLE);
                 textViewHome.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FeltetelFragment()).commit();
+                break;
+            case R.id.kedvencek:
+                fragmentContainer.setVisibility(View.VISIBLE);
+                textViewHome.setVisibility(View.GONE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new KedvencekFragment()).commit();
                 break;
         }
 

@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.cat;
 
 public class Cat {
     public String catName, description;

@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.esemenyek;
 
 import android.os.Bundle;
 
@@ -8,11 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class OrokbefogadhatoFragment extends Fragment {
+import com.example.elethangapplication.R;
+
+
+public class EsemenyekFragment extends Fragment {
+    String[] felsorolas;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_orokbefogadhato, container, false);
+        View view = inflater.inflate(R.layout.fragment_esemenyek, container, false);
+
+
+        return view;
     }
 }

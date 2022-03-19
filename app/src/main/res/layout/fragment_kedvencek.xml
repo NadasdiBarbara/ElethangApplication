@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".KedvencekFragment"
-    >
+    tools:context=".kedvencek.KedvencekFragment">
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500"
+        android:layout_height="match_parent"
         android:text="Kedvencek"
-        android:textSize="30dp"
-        android:layout_gravity="center"/>
+        android:textSize="30sp"
+        android:textColor="#000000"/>
 
-
-
-</LinearLayout>
+</FrameLayout>

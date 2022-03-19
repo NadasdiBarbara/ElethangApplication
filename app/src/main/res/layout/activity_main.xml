@@ -39,15 +39,6 @@
         android:layout_below="@id/toolbar"
         android:id="@+id/fragment_container"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background"
-        android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_menu" />
 </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.cat;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.elethangapplication.R;
 
 import java.util.List;
 
