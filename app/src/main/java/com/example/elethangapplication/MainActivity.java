@@ -9,12 +9,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.elethangapplication.cat.CatFragment;
@@ -35,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private TextView textViewHome;
     private FrameLayout fragmentContainer;
+    private ImageView logoHome,slide;
+    private TextView udvozles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +94,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
-        textViewHome = findViewById(R.id.textViewHome);
         fragmentContainer = findViewById(R.id.fragment_container);
+        logoHome = findViewById(R.id.logoHome);
+        slide = findViewById(R.id.slide);
+        udvozles = findViewById(R.id.udvozles);
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) slide.getDrawable();
+        animationDrawable.start();
     }
 
     @Override
@@ -101,66 +109,88 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.cat:
                 //replaceFragment(new CatFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CatFragment()).commit();
                 break;
             case R.id.dog:
                 //replaceFragment(new DogFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DogFragment()).commit();
                 break;
             case R.id.segitseg:
                 //replaceFragment(new HogyanSegithetszFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HogyanSegithetszFragment()).commit();
                 break;
             case R.id.orokbefogadhatoak:
                 //replaceFragment(new OrokbefogadhatoFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrokbefogadhatoFragment()).commit();
                 break;
             case R.id.virtualis:
                 //replaceFragment(new VirtualisFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new VirtualisFragment()).commit();
                 break;
             case R.id.esemenyek:
                 //replaceFragment(new EsemenyekFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EsemenyekFragment()).commit();
                 break;
             case R.id.programok:
                 //replaceFragment(new ProgramokFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramokFragment()).commit();
                 break;
             case R.id.rolunk:
                 //replaceFragment(new RolunkFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RolunkFragment()).commit();
                 break;
             case R.id.csapatunk:
                 //replaceFragment(new CsapatunkFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CsapatunkFragment()).commit();
                 break;
             case R.id.feltetel:
                 //replaceFragment(new FeltetelFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FeltetelFragment()).commit();
                 break;
             case R.id.kedvencek:
                 fragmentContainer.setVisibility(View.VISIBLE);
-                textViewHome.setVisibility(View.GONE);
+                udvozles.setVisibility(View.GONE);
+                logoHome.setVisibility(View.GONE);
+                slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new KedvencekFragment()).commit();
                 break;
         }
