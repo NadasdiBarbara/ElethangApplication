@@ -36,11 +36,11 @@ public class CatFragment extends Fragment {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         catList=new ArrayList<>();
-        catList.add(new Cat("Cica", "Cicss"));
-        catList.add(new Cat("Cica", "Cicss"));
-        catList.add(new Cat("Cica", "Cicsssa"));
-        catList.add(new Cat("Cica", "Cicsssa"));
-        catList.add(new Cat("Cica", "Cicsssaaa"));
+        catList.add(new Cat("Cica", "Cicsssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        catList.add(new Cat("Cica", "Cicsssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        catList.add(new Cat("Cica", "Cicsssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        catList.add(new Cat("Cica", "Cicsssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        catList.add(new Cat("Cica", "Cicsssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
         catAdapter= new CatAdapter(getContext(),catList);
     }
 }
