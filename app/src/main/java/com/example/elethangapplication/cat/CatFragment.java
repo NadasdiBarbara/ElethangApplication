@@ -20,6 +20,8 @@ public class CatFragment extends Fragment {
     private RecyclerView recyclerView;
     private CatAdapter catAdapter;
     private List<Cat> catList;
+
+    private String url = "http://10.0.2.2:8000/api/cat";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
