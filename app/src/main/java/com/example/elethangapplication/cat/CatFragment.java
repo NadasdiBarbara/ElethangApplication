@@ -52,8 +52,10 @@ public class CatFragment extends Fragment {
     private CatAdapter catAdapter;
     private List<Cat> catList;
 
-
-    private String url = "http://10.148.149.41:8000/api/cat";
+    //eduroam
+    //private String url = "http://10.148.149.41:8000/api/cat";
+    //otthon laptop
+    private String url = "http://192.168.0.210:8000/api/cat";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
