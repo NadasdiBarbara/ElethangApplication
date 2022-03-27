@@ -1,8 +1,12 @@
 package com.example.elethangapplication.dog;
 
-public class Dog {
+import com.google.gson.annotations.SerializedName;
 
-    public String dogName,dogDescription;
+public class Dog {
+    @SerializedName("name")
+    public String dogName;
+    @SerializedName("description")
+    public String dogDescription;
 
     public Dog(String dogName, String dogDescription) {
         this.dogName = dogName;

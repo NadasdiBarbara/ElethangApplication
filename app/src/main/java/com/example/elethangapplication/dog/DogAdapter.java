@@ -24,6 +24,10 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogHolder> {
         this.context = context;
         this.dogList = dogList;
     }
+    public void setDogList(List<Dog> dogList){
+        this.dogList = dogList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
