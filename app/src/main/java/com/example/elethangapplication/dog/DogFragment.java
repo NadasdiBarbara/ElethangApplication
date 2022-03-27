@@ -59,7 +59,9 @@ public class DogFragment extends Fragment {
     //eduroam
     //private String url = "http://10.148.149.41:8000/api/dog";
     //otthon laptop
-    private String url = "http://192.168.0.210:8000/api/dog";
+    //private String url = "http://192.168.0.210:8000/api/dog";
+    //otthon gép
+    private String url = "http://192.168.0.48:8000/api/dog";
 
     @Nullable
     @Override
