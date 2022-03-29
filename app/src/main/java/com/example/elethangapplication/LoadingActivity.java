@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class BetoltoActivity extends AppCompatActivity {
+public class LoadingActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 3000;
 
@@ -17,12 +17,12 @@ public class BetoltoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_betolto);
+        setContentView(R.layout.activity_loading);
 
         new Handler(). postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(BetoltoActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();

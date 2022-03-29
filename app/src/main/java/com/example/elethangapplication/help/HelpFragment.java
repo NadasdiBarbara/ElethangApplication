@@ -1,4 +1,4 @@
-package com.example.elethangapplication.hogyansegits;
+package com.example.elethangapplication.help;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.elethangapplication.R;
 
-public class HogyanSegithetszFragment extends Fragment {
+public class HelpFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root=  inflater.inflate(R.layout.fragment_hogyansegithetsz,container, false);
+        View root=  inflater.inflate(R.layout.fragment_help,container, false);
         return root;
 
     }

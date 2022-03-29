@@ -1,4 +1,4 @@
-package com.example.elethangapplication.orokbefogadhato;
+package com.example.elethangapplication.program;
 
 import android.os.Bundle;
 
@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 
 import com.example.elethangapplication.R;
 
-public class OrokbefogadhatoFragment extends Fragment {
+
+public class ProgramFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_orokbefogadhato, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_program, container, false);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.elethangapplication.csapatunk;
+package com.example.elethangapplication.team;
 
 import android.os.Bundle;
 
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.elethangapplication.R;
 
-public class CsapatunkFragment extends Fragment {
+public class TeamFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_csapatunk, container, false);
+        return inflater.inflate(R.layout.fragment_team, container, false);
     }
 }

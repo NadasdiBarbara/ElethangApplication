@@ -13,7 +13,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.ElethangApplication">
         <activity
-            android:name=".BetoltoActivity"
+            android:name=".LoadingActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.elethangapplication.esemenyek;
+package com.example.elethangapplication.events;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import com.example.elethangapplication.R;
 import com.example.elethangapplication.RequestHandler;
 import com.example.elethangapplication.Response;
-import com.example.elethangapplication.dog.Dog;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -23,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class EsemenyekFragment extends Fragment {
+public class EventFragment extends Fragment {
     private class RequestTask extends AsyncTask<Void,Void, Response> {
 
         @Override
@@ -64,7 +63,7 @@ public class EsemenyekFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_esemenyek, container, false);
+        View view = inflater.inflate(R.layout.fragment_event, container, false);
         init(view);
         recyclerView.setAdapter(eventAdapter);
         return view;

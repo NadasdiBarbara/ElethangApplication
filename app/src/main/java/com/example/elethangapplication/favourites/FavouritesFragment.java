@@ -1,4 +1,4 @@
-package com.example.elethangapplication.virtualis;
+package com.example.elethangapplication.favourites;
 
 import android.os.Bundle;
 
@@ -10,11 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.elethangapplication.R;
 
-public class VirtualisFragment extends Fragment {
+public class FavouritesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_virtualis, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_favourites, container, false);
     }
 }

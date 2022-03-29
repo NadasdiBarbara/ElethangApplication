@@ -1,4 +1,4 @@
-package com.example.elethangapplication.kedvencek;
+package com.example.elethangapplication.virtual;
 
 import android.os.Bundle;
 
@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.elethangapplication.R;
 
-public class KedvencekFragment extends Fragment {
+public class VirtualFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kedvencek, container, false);
+        return inflater.inflate(R.layout.fragment_virtual, container, false);
     }
 }

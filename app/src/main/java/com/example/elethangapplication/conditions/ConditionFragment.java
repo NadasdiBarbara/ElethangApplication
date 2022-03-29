@@ -1,4 +1,4 @@
-package com.example.elethangapplication.rolunk;
+package com.example.elethangapplication.conditions;
 
 import android.os.Bundle;
 
@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import com.example.elethangapplication.R;
 
 
-public class RolunkFragment extends Fragment {
-
+public class ConditionFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rolunk, container, false);
+        View view= inflater.inflate(R.layout.fragment_conditions, container, false);
+        return view;
     }
+
 }

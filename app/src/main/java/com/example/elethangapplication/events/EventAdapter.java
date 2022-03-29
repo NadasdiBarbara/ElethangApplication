@@ -1,4 +1,4 @@
-package com.example.elethangapplication.esemenyek;
+package com.example.elethangapplication.events;
 
 import android.content.Context;
 import android.view.LayoutInflater;
