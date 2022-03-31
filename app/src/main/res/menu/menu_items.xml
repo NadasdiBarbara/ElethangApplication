@@ -30,7 +30,7 @@
     <item android:title="Önkéntesség">
         <menu>
             <item android:id="@+id/esemenyek"
-                android:title="Események"
+                android:title="Rendezvények"
                 android:icon="@drawable/ic_esemenyek"/>
             <item android:id="@+id/programok"
                 android:title="Programok"
