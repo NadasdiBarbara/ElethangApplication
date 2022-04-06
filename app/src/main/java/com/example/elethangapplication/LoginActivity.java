@@ -2,8 +2,14 @@ package com.example.elethangapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.elethangapplication.cat.Cat;
@@ -14,29 +20,61 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
+    private Button buttonLogin;
+    private EditText etUsername;
+    private EditText etPassword;
+    private SharedPreferences sharedPreferences;
 
     //otthon gép
     //private String url = "http://192.168.0.48:8000/login";
     //private String url = "http://10.0.2.2:8000/login";
-    private String url = "http://10.0.2.2:8000/api/dogAdoption";
-    private String body;
+    private String url = "http://10.148.149.190:8000/api/login";
+    //private String url = "http://10.0.2.2:8000/api/dogAdoption";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        RequestTask task = new RequestTask();
-        task.execute();
+        sharedPreferences = LoginActivity.this.getSharedPreferences("token", Context.MODE_PRIVATE);
+        init();
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                RequestTask task = new RequestTask();
+                task.execute();
+            }
+        });
+    }
+    public void init(){
+        buttonLogin = findViewById(R.id.buttonLogin);
+        etUsername = findViewById(R.id.editUsername);
+        etPassword = findViewById(R.id.editpassword);
     }
 
+
     private class RequestTask extends AsyncTask<Void, Void, Response> {
+        private String body;
+
+        @Override
+        protected void onPreExecute() {
+            String username = etUsername.getText().toString().trim();
+            String password = etPassword.getText().toString().trim();
+            // TODO: validáció
+            if (username.isEmpty()){
+                Toast.makeText(LoginActivity.this, "Felhasználó kötelező", Toast.LENGTH_SHORT).show();
+            }
+            else if (password.isEmpty()){
+                Toast.makeText(LoginActivity.this, "Jelszó kötelező", Toast.LENGTH_SHORT).show();
+            }
+            LoginUser user = new LoginUser(username, password);
+            Gson jsonconv = new Gson();
+            body = jsonconv.toJson(user);
+        }
+
         @Override
         protected Response doInBackground(Void... voids) {
-            body = "{\n" +
-                    "    \"adoption_type_id\" : 1,\n" +
-                    "    \"user_id\": 2,\n" +
-                    "    \"dog_id\": 17\n" +
-                    "}";
             Response response = null;
             try {
                 response = RequestHandler.post(url, body);
@@ -53,10 +91,25 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Response response) {
             super.onPostExecute(response);
-            if (response != null) {
+            if (response == null) {
+                //TODO megfelelő hibaüzenet
+                Toast.makeText(LoginActivity.this, "Hiba történt a bejelentkezés során", Toast.LENGTH_SHORT).show();
 
-
+            }else if (response.getResponseCode() >= 400){
+                Toast.makeText(LoginActivity.this, response.getContent(), Toast.LENGTH_SHORT).show();
             }
+            //TODO: válasz vizsgálata és másik activity indítása
+            else {
+                Toast.makeText(LoginActivity.this, "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
+                Gson gson = new Gson();
+                Token token = gson.fromJson(response.getContent(), Token.class);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("token", token.getToken());
+                editor.apply();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+            finish();
         }
     }
 }

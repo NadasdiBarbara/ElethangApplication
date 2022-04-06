@@ -5,27 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:gravity="center"
     android:background="@color/white">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editUsername"
             android:hint="Felhasználónév"
+            android:textColor="@color/black"
             android:backgroundTint="@color/background"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editpassword"
-            android:hint="Jelszó"
-            android:backgroundTint="@color/background"
-            android:layout_below="@id/editUsername" />
-    </RelativeLayout>
+            android:hint="Jelszó NEM JELENIK MEG"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/background" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login" />
 
 </LinearLayout>
 

@@ -57,10 +57,12 @@ public class RequestHandler {
 
     private static Response postResponse(HttpURLConnection conn, String request) throws IOException{
         conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
         conn.setDoOutput(true);//felkészül, hogy szeretne elküldeni valamit
         OutputStream outputStream = conn.getOutputStream();
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(outputStream));
         bw.write(request);
+        bw.flush();
         int responseCode = conn.getResponseCode();
         InputStream is;
         if (responseCode < 400){
