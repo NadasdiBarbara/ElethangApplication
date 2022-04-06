@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.elethangapplication.cat.Cat;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private SharedPreferences sharedPreferences;
+    private TextView registerLink;
 
     //otthon gép
     //private String url = "http://192.168.0.48:8000/login";
@@ -37,6 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         sharedPreferences = LoginActivity.this.getSharedPreferences("token", Context.MODE_PRIVATE);
         init();
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,11 +56,13 @@ public class LoginActivity extends AppCompatActivity {
                 task.execute();
             }
         });
+
     }
     public void init(){
         buttonLogin = findViewById(R.id.buttonLogin);
         etUsername = findViewById(R.id.editUsername);
         etPassword = findViewById(R.id.editpassword);
+        registerLink = findViewById(R.id.registerLink);
     }
 
 
@@ -108,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+                
             }
             finish();
         }
