@@ -20,12 +20,37 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editUsername"
+        android:id="@+id/editRegisterUsername"
         android:hint="Felhasználónév"
         android:textColor="@color/black"
         android:textColorHint="@color/background"
         android:backgroundTint="@color/background"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editemail"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/background"
+        android:backgroundTint="@color/background"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editpsw"
+        android:hint="Jelszó"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/background"
+        android:backgroundTint="@color/background"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerButton"
+        android:text="Regisztráció"
+        android:background="@color/background"
+        android:textSize="17sp"/>
 
 
 
