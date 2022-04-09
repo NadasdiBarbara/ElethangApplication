@@ -57,7 +57,9 @@ public class CatFragment extends Fragment {
     //otthon laptop
     //private String url = "http://192.168.0.210:8000/api/cat";
     //otthon gép
-    private String url = "http://192.168.0.48:8000/api/cat";
+    //private String url = "http://192.168.0.48:8000/api/cat";
+    //emulator
+    private String url = "http://10.0.2.2:8000/api/cat";
 
 
     @Nullable
