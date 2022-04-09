@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.elethangapplication.login.LoginActivity;
+
 public class LoadingActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 3000;

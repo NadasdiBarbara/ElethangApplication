@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.elethangapplication.login.LoginActivity;
+import com.example.elethangapplication.R;
+import com.example.elethangapplication.RequestHandler;
+import com.example.elethangapplication.Response;
 import com.google.gson.Gson;
 
 import java.io.IOException;

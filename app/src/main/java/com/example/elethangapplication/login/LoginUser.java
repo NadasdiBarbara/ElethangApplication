@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.login;
 
 public class LoginUser {
     public String username;

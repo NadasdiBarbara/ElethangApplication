@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,12 +15,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.elethangapplication.cat.Cat;
-import com.example.elethangapplication.cat.CatFragment;
+import com.example.elethangapplication.MainActivity;
+import com.example.elethangapplication.R;
+import com.example.elethangapplication.RequestHandler;
+import com.example.elethangapplication.Response;
+import com.example.elethangapplication.Token;
+import com.example.elethangapplication.register.RegisterActivity;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
     private Button buttonLogin;

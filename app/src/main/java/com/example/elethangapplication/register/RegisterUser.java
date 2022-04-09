@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.register;
 
 public class RegisterUser {
     public String name;
