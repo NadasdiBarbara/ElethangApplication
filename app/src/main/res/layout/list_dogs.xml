@@ -15,11 +15,11 @@
         android:background="@color/white">
 
         <ImageView
+            android:id="@+id/pictureDog"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/pictureDog"
-            android:src="@mipmap/dogimage"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@mipmap/dogimage" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +40,16 @@
             android:paddingLeft="75dp"
             android:layout_centerHorizontal="true"
             android:textColor="#000000"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogDescription"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btnDogadoption"
+            android:text="Örökbefogadás"
+            android:background="@color/background"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"/>
 
     </RelativeLayout>
 
