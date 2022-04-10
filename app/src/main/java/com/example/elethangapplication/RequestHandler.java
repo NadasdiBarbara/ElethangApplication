@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
 
 public class RequestHandler {
 
@@ -80,5 +81,11 @@ public class RequestHandler {
         br.close();
         is.close();
         return new Response(responseCode, builder.toString());
+    }
+
+    public static Response postAuth(String url, String request, String token) throws IOException {
+        HttpURLConnection conn = setupConnection(url);
+        conn.setRequestProperty("Authorization", "Bearer " + token);
+        return postResponse(conn,request);
     }
 }
