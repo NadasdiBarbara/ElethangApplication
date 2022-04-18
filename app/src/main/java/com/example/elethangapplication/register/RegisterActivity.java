@@ -27,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editemail;
     private EditText editpsw;
     private Button registerButton;
+    private Button visszabtn;
     private String name, username, email, password;
 
     //laptop
@@ -52,6 +53,14 @@ public class RegisterActivity extends AppCompatActivity {
                 task.execute();
             }
         });
+        visszabtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void init(){
@@ -60,7 +69,9 @@ public class RegisterActivity extends AppCompatActivity {
         editemail = findViewById(R.id.editemail);
         editpsw = findViewById(R.id.editpsw);
         registerButton = findViewById(R.id.registerButton);
+        visszabtn = findViewById(R.id.visszabtn);
     }
+
 
     private class RequestTask extends AsyncTask<Void, Void, Response> {
         private String body;
