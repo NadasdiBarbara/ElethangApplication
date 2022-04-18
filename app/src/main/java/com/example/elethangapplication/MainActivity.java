@@ -19,17 +19,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.elethangapplication.adoptable.AdoptableFragment;
 import com.example.elethangapplication.cat.CatFragment;
-import com.example.elethangapplication.conditions.ConditionFragment;
-import com.example.elethangapplication.team.TeamFragment;
 import com.example.elethangapplication.dog.DogFragment;
 import com.example.elethangapplication.events.EventFragment;
-import com.example.elethangapplication.help.HelpFragment;
 import com.example.elethangapplication.favourites.FavouritesFragment;
 import com.example.elethangapplication.program.ProgramFragment;
 import com.example.elethangapplication.aboutus.AboutUsFragment;
-import com.example.elethangapplication.virtual.VirtualFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
