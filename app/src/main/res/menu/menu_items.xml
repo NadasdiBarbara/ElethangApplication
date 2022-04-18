@@ -15,17 +15,7 @@
                 android:icon="@drawable/ic_favorite"/>
     </group>
 
-    <item android:title="Örökbefogadás">
-        <menu>
-            <item android:id="@+id/orokbefogadhatoak"
-                android:title="Örökbefogadható Állatok"
-                android:icon="@drawable/ic_orokbefogadhatoak"/>
-            <item android:id="@+id/virtualis"
-                android:title="Virtuális Örökbefogadás"
-                android:icon="@drawable/ic_virtualis"/>
 
-        </menu>
-    </item>
 
     <item android:title="Önkéntesség">
         <menu>
@@ -44,21 +34,10 @@
             <item android:id="@+id/rolunk"
                 android:title="Rólunk"
                 android:icon="@drawable/ic_rolunk"/>
-            <item android:id="@+id/csapatunk"
-                android:title="Csapatunk"
-                android:icon="@drawable/ic_csapatunk"/>
+
         </menu>
     </item>
-    <item android:title="Tudnivalók">
-        <menu>
-            <item android:id="@+id/segitseg"
-                android:title="Hogyan segíthetsz?"
-                android:icon="@drawable/ic_segit"/>
-            <item android:id="@+id/feltetel"
-                android:title="Örökbefogadás feltétele"
-                android:icon="@drawable/ic__info"/>
-        </menu>
-    </item>
+
 
 
 </menu>

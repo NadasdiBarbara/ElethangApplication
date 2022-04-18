@@ -122,30 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DogFragment()).commit();
                 break;
-            case R.id.segitseg:
-                //replaceFragment(new HelpFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HelpFragment()).commit();
-                break;
-            case R.id.orokbefogadhatoak:
-                //replaceFragment(new AdoptableFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AdoptableFragment()).commit();
-                break;
-            case R.id.virtualis:
-                //replaceFragment(new VirtualFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new VirtualFragment()).commit();
-                break;
+
             case R.id.esemenyek:
                 //replaceFragment(new EventFragment());
                 fragmentContainer.setVisibility(View.VISIBLE);
@@ -170,22 +147,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 slide.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutUsFragment()).commit();
                 break;
-            case R.id.csapatunk:
-                //replaceFragment(new TeamFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TeamFragment()).commit();
-                break;
-            case R.id.feltetel:
-                //replaceFragment(new ConditionFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ConditionFragment()).commit();
-                break;
+
             case R.id.kedvencek:
                 fragmentContainer.setVisibility(View.VISIBLE);
                 udvozles.setVisibility(View.GONE);
