@@ -9,8 +9,7 @@ public class Dog {
     @SerializedName("description")
     public String dogDescription;
 
-    public Dog(int id, String dogName, String dogDescription) {
-        this.id = id;
+    public Dog( String dogName, String dogDescription) {
         this.dogName = dogName;
         this.dogDescription = dogDescription;
     }

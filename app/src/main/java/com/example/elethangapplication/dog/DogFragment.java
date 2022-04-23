@@ -61,7 +61,9 @@ public class DogFragment extends Fragment {
     //otthon laptop
     //private String url = "http://192.168.0.210:8000/api/dog";
     //otthon gép
-    private String url = "http://192.168.0.48:8000/api/dog";
+    //private String url = "http://192.168.0.48:8000/api/dog";
+    //emulator
+    private String url = "http://10.0.2.2:8000/api/dog";
 
     @Nullable
     @Override

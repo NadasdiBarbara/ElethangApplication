@@ -1,5 +1,6 @@
 package com.example.elethangapplication.cat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -54,7 +55,7 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CatAdapter.CatHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CatAdapter.CatHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.catName.setText(catList.get(position).getCatName());
         holder.description.setText(catList.get(position).getDescription());
         cat = catList.get(position);
@@ -65,6 +66,7 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                 SharedPreferences sharedPreferences= context.getSharedPreferences("token", Context.MODE_PRIVATE);
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
                 alert.setPositiveButton("Virtuális örökbefogadás", (dialogInterface, i) -> {
+                    cat = catList.get(position);
                     pozitiv = true;
                    /* AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
                         @Override
@@ -86,6 +88,7 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                 });
 
                 alert.setNegativeButton("Ált.örökbefogadás", (dialogInterface, i) -> {
+                    cat = catList.get(position);
                     pozitiv = false;
                     /*AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
                         @Override
