@@ -31,6 +31,7 @@ public class RequestHandler {
         URL urlObj = new URL(url);
         HttpURLConnection conn = (HttpURLConnection) urlObj.openConnection();
         conn.setRequestProperty("Accept", "application/json");
+        conn.setRequestProperty("Content-Type", "application/json;charset=utf-8");
         conn.setConnectTimeout(10000);
         conn.setReadTimeout(10000);
         return conn;

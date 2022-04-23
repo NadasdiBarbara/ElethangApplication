@@ -19,13 +19,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.elethangapplication.R;
 import com.example.elethangapplication.RequestHandler;
 import com.example.elethangapplication.Response;
+import com.example.elethangapplication.login.LoginActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
     Context context;
     List<Cat>catList;
+    Cat cat;
+    Boolean pozitiv;
 
     private String url = "http://10.0.2.2:8000/api/catAdoptionLoggedin/";
 
@@ -50,7 +57,7 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
     public void onBindViewHolder(@NonNull CatAdapter.CatHolder holder, int position) {
         holder.catName.setText(catList.get(position).getCatName());
         holder.description.setText(catList.get(position).getDescription());
-        Cat cat = catList.get(position);
+        cat = catList.get(position);
 
         holder.btnadoption.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,24 +65,29 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                 SharedPreferences sharedPreferences= context.getSharedPreferences("token", Context.MODE_PRIVATE);
                 AlertDialog.Builder alert = new AlertDialog.Builder(context);
                 alert.setPositiveButton("Virtuális örökbefogadás", (dialogInterface, i) -> {
-                    AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
+                    pozitiv = true;
+                   /* AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
                         @Override
                         protected Response doInBackground(Void... voids) {
                             Response response = null;
                             try {
                                 response = RequestHandler.postAuth(url+ cat.id,"{\"adoption_type_id\":2}",sharedPreferences.getString("token",""));
-                                Log.d("Response", response.getContent());
+                                Toast.makeText(context.getApplicationContext(), "Ügyes vagy", Toast.LENGTH_SHORT).show();
+                                //Log.d("Response", response.getContent());
                             } catch (IOException e) {
                                 Log.d("Response error", e.getMessage());
                             }
                             return response;
                         }
                     };
-                    task.execute();
+                    task.execute();*/
+                    RequestTask rt =new RequestTask();
+                    rt.execute();
                 });
 
                 alert.setNegativeButton("Ált.örökbefogadás", (dialogInterface, i) -> {
-                    AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
+                    pozitiv = false;
+                    /*AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
                         @Override
                         protected Response doInBackground(Void... voids) {
                             Response response = null;
@@ -88,7 +100,9 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                             return response;
                         }
                     };
-                    task.execute();
+                    task.execute();*/
+                    RequestTask rt =new RequestTask();
+                    rt.execute();
                 });
                 alert.create().show();
             }
@@ -99,6 +113,45 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
     public int getItemCount() {
         return catList.size();
     }
+
+
+    private class RequestTask extends AsyncTask<Void, Void, Response>{
+
+        @Override
+        protected Response doInBackground(Void... voids) {
+
+            Response response = null;
+
+            SharedPreferences sharedPreferences = context.getSharedPreferences("token", Context.MODE_PRIVATE);
+
+            try {
+                if (pozitiv){
+                    response = RequestHandler.postAuth(url+cat.getId(),"{\"adoption_type_id\":2}", sharedPreferences.getString("token",""));
+                }else {
+                    response = RequestHandler.postAuth(url+cat.getId(),"{\"adoption_type_id\":1}", sharedPreferences.getString("token",""));
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(Response response) {
+            super.onPostExecute(response);
+            JSONObject jsonObject;
+            String message;
+            try {
+                jsonObject = new JSONObject(response.getContent());
+                message = jsonObject.getString("message");
+                Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     public static class CatHolder extends RecyclerView.ViewHolder{
         TextView catName;
