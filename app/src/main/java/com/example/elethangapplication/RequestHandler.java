@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 
 public class RequestHandler {
@@ -26,6 +27,17 @@ public class RequestHandler {
         HttpURLConnection conn = setupConnection(url);
         return postResponse(conn,request);
     }
+    public static Response delete(String url) throws IOException {
+        HttpURLConnection conn = setupConnection(url);
+        conn.setRequestMethod("DELETE");
+        return getResponse(conn);
+    }
+    /*public static Response put(String url, String data) throws IOException {
+        HttpURLConnection conn = setupConnection(url);
+        conn.setRequestMethod("PUT");;
+        return getResponse(conn);
+    }*/
+
 
     private static HttpURLConnection setupConnection(String url) throws IOException{
         URL urlObj = new URL(url);
@@ -88,5 +100,11 @@ public class RequestHandler {
         HttpURLConnection conn = setupConnection(url);
         conn.setRequestProperty("Authorization", "Bearer " + token);
         return postResponse(conn,request);
+    }
+
+    public static Response getAuth(String url, String token) throws IOException {
+        HttpURLConnection conn = setupConnection(url);
+        conn.setRequestProperty("Authorization", "Bearer " + token);
+        return getResponse(conn);
     }
 }

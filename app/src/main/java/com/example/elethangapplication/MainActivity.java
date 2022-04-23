@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.example.elethangapplication.cat.CatFragment;
 import com.example.elethangapplication.dog.DogFragment;
 import com.example.elethangapplication.events.EventFragment;
-import com.example.elethangapplication.favourites.FavouritesFragment;
+import com.example.elethangapplication.applications.ApplicationsFragment;
 import com.example.elethangapplication.program.ProgramFragment;
 import com.example.elethangapplication.aboutus.AboutUsFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 udvozles.setVisibility(View.GONE);
                 logoHome.setVisibility(View.GONE);
                 slide.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavouritesFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ApplicationsFragment()).commit();
                 break;
         }
 

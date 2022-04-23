@@ -12,7 +12,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
         android:background="@color/white">
 
         <TextView
@@ -34,9 +33,9 @@
             android:layout_marginTop="15sp"
             android:singleLine="true"
             android:text="2020.11.01 "
+            android:textColor="@color/background"
             android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/background"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/time"
