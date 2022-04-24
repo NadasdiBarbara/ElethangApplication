@@ -1,8 +1,8 @@
 package com.example.elethangapplication.login;
 
 public class LoginUser {
-    public String username;
-    public String password;
+    private String username;
+    private String password;
 
     public LoginUser(String username, String password) {
         this.username = username;
