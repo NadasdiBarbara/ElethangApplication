@@ -11,11 +11,9 @@
             android:title="Kutyák"
             android:icon="@drawable/ic_dog"/>
             <item android:id="@+id/kedvencek"
-                android:title="Kedvencek"
-                android:icon="@drawable/ic_favorite"/>
+                android:title="Jelentkezéseim"
+                android:icon="@drawable/ic_calendar_"/>
     </group>
-
-
 
     <item android:title="Önkéntesség">
         <menu>

@@ -59,12 +59,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 int id = item.getItemId();
                 if (id == R.id.exit){
                     AlertDialog.Builder builder = new  AlertDialog.Builder(MainActivity.this);
-                    builder.setMessage("Biztos kiszeretne lépni?");
+                    builder.setMessage("Biztos kiszeretne jelentkezni?");
                     builder.setCancelable(true);
 
                     builder.setNegativeButton("Igen", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(MainActivity.this, LoadingActivity.class);
+                            startActivity(intent);
                             finish();
                         }
                     });
