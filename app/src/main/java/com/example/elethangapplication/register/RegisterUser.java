@@ -1,10 +1,10 @@
 package com.example.elethangapplication.register;
 
 public class RegisterUser {
-    public String name;
-    public String username;
-    public String email;
-    public String password;
+    private String name;
+    private String username;
+    private String email;
+    private String password;
 
     public RegisterUser(String name, String username, String email, String password) {
         this.name = name;
