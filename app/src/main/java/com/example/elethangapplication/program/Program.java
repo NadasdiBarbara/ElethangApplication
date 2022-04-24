@@ -1,10 +1,10 @@
 package com.example.elethangapplication.program;
 
 public class Program {
-    public int id;
-    public String type;
-    public String date;
-    public String time;
+    private int id;
+    private String type;
+    private String date;
+    private String time;
 
     public Program(int id, String type, String date, String time) {
         this.id = id;
