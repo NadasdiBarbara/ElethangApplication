@@ -112,57 +112,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()){
             case R.id.cat:
                 //replaceFragment(new CatFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CatFragment()).commit();
                 break;
             case R.id.dog:
                 //replaceFragment(new DogFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DogFragment()).commit();
                 break;
 
             case R.id.esemenyek:
                 //replaceFragment(new EventFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventFragment()).commit();
                 break;
             case R.id.programok:
                 //replaceFragment(new ProgramFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProgramFragment()).commit();
                 break;
             case R.id.rolunk:
                 //replaceFragment(new AboutUsFragment());
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutUsFragment()).commit();
                 break;
 
             case R.id.kedvencek:
-                fragmentContainer.setVisibility(View.VISIBLE);
-                udvozles.setVisibility(View.GONE);
-                logoHome.setVisibility(View.GONE);
-                slide.setVisibility(View.GONE);
+                visibility();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ApplicationsFragment()).commit();
                 break;
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void visibility(){
+        fragmentContainer.setVisibility(View.VISIBLE);
+        udvozles.setVisibility(View.GONE);
+        logoHome.setVisibility(View.GONE);
+        slide.setVisibility(View.GONE);
     }
     /*
     private void replaceFragment(Fragment fragment){
