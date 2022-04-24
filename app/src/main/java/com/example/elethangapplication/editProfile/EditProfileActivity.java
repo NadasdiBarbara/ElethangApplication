@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.editProfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.elethangapplication.register.RegisterUser;
+import com.example.elethangapplication.MainActivity;
+import com.example.elethangapplication.R;
+import com.example.elethangapplication.RequestHandler;
+import com.example.elethangapplication.Response;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -108,7 +111,7 @@ public class EditProfileActivity extends AppCompatActivity {
         protected Response doInBackground(Void... voids) {
             Response response =null;
             try {
-                response  =RequestHandler.getAuth(url +"user",sharedPreferences.getString("token", ""));
+                response  = RequestHandler.getAuth(url +"user",sharedPreferences.getString("token", ""));
             }catch (IOException e ){
                 e.printStackTrace();
             }

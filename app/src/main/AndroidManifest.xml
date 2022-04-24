@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ElethangApplication"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".editProfile.EditProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity

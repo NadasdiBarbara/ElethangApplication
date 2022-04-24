@@ -1,4 +1,4 @@
-package com.example.elethangapplication;
+package com.example.elethangapplication.editProfile;
 
 public class User {
     private  int id;

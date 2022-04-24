@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.elethangapplication.cat.CatFragment;
 import com.example.elethangapplication.dog.DogFragment;
+import com.example.elethangapplication.editProfile.EditProfileActivity;
 import com.example.elethangapplication.events.EventFragment;
 import com.example.elethangapplication.applications.ApplicationsFragment;
 import com.example.elethangapplication.program.ProgramFragment;
