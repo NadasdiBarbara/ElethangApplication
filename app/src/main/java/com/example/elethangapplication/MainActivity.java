@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -76,6 +77,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     });
                     AlertDialog alertDialog = builder.create();
                     alertDialog.show();
+                }
+                if (id == R.id.profil){
+                    Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 return true;
             }

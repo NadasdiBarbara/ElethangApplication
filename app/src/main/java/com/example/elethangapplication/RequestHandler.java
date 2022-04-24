@@ -32,11 +32,23 @@ public class RequestHandler {
         conn.setRequestMethod("DELETE");
         return getResponse(conn);
     }
-    /*public static Response put(String url, String data) throws IOException {
+    public static Response put(String url, String data, String  token) throws IOException {
         HttpURLConnection conn = setupConnection(url);
-        conn.setRequestMethod("PUT");;
+        conn.setRequestMethod("PUT");
+        conn.setRequestProperty("Authorization", "Bearer " + token);
+        addRequestBody(conn, data);
         return getResponse(conn);
-    }*/
+    }
+    private static void addRequestBody(HttpURLConnection conn, String data) throws IOException{
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+        OutputStream os = conn.getOutputStream();
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));
+        writer.write(data);
+        writer.flush();
+        writer.close();
+        os.close();
+    }
 
 
     private static HttpURLConnection setupConnection(String url) throws IOException{

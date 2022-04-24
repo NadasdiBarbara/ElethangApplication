@@ -13,13 +13,17 @@
         android:theme="@style/Theme.ElethangApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".register.RegisterActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoadingActivity"
             android:exported="true"

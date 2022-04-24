@@ -3,6 +3,7 @@ package com.example.elethangapplication.applications;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 
 import android.view.LayoutInflater;
@@ -13,8 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.elethangapplication.MainActivity;
 import com.example.elethangapplication.R;
 import com.example.elethangapplication.RequestHandler;
 import com.example.elethangapplication.Response;
@@ -77,9 +80,27 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         holder.deleteApplication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                applications = applicationsList.get(position);
-                RequestTask task = new RequestTask();
-                task.execute();
+
+
+                AlertDialog.Builder builder = new  AlertDialog.Builder(context);
+                builder.setMessage("Biztos szeretné törölni?");
+                builder.setNegativeButton("Igen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        applications = applicationsList.get(position);
+                        RequestTask task = new RequestTask();
+                        task.execute();
+                    }
+                });
+                builder.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
             }
         });
     }
