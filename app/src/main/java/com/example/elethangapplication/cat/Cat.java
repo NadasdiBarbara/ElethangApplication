@@ -3,10 +3,10 @@ package com.example.elethangapplication.cat;
 import com.google.gson.annotations.SerializedName;
 
 public class Cat {
-    public int id;
+    private int id;
     @SerializedName("name")
-    public String catName;
-    public String description;
+    private String catName;
+    private String description;
 
     public Cat(int id, String catName, String description) {
         this.catName = catName;
