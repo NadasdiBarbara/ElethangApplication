@@ -34,7 +34,8 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogHolder> {
     Dog dog;
     Boolean pozitiv;
 
-    private String url = "http://10.0.2.2:8000/api/dogAdoptionLoggedin/";
+    //private String url = "http://10.0.2.2:8000/api/dogAdoptionLoggedin/";
+    private String url = "http://192.168.0.48:8000/api/dogAdoptionLoggedin/";
 
     public DogAdapter(Context context, List<Dog> dogList) {
         this.context = context;

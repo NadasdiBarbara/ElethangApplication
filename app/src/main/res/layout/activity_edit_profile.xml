@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".editProfile.EditProfileActivity"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/textName"

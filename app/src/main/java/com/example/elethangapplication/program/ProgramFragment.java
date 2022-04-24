@@ -56,7 +56,8 @@ public class ProgramFragment extends Fragment {
     private ProgramAdapter programAdapter;
     private List<Program>programList;
 
-    private String url = "http://10.0.2.2:8000/api/programinfo";
+    //private String url = "http://10.0.2.2:8000/api/programinfo";
+    private String url = "http://192.168.0.48:8000/api/programinfo";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

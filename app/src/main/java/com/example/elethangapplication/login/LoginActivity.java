@@ -33,12 +33,12 @@ public class LoginActivity extends AppCompatActivity {
     private TextView registerLink;
 
     //otthon gép
-    //private String url = "http://192.168.0.48:8000/api/login";
+    private String url = "http://192.168.0.48:8000/api/login";
     //private String url = "http://10.0.2.2:8000/login";
     //private String url = "http://10.148.149.190:8000/api/login";
     //private String url = "http://10.0.2.2:8000/api/dogAdoption";
     //emulator
-    private String url = "http://10.0.2.2:8000/api/login";
+    //private String url = "http://10.0.2.2:8000/api/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -61,7 +61,8 @@ public class ApplicationsFragment extends Fragment {
     private RecyclerView recyclerViewApplications;
     private ApplicationAdapter applicationAdapter;
     private List<Applications> applicationsList;
-    private String url = "http://10.0.2.2:8000/api/showApplication";
+    //private String url = "http://10.0.2.2:8000/api/showApplication";
+    private String url = "http://192.168.0.48:8000/api/showApplication";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

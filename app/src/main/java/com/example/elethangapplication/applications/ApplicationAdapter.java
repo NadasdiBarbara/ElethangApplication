@@ -30,7 +30,8 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
     List<Applications>applicationsList;
     Applications applications;
 
-    private  String url ="http://10.0.2.2:8000/api/deleteProgramApplication/";
+    //private  String url ="http://10.0.2.2:8000/api/deleteProgramApplication/";
+    private  String url ="http://192.168.0.48:8000/api/deleteProgramApplication/";
 
     public ApplicationAdapter(Context context, List<Applications> applicationsList) {
         this.context = context;

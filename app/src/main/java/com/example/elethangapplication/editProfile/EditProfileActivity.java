@@ -38,7 +38,8 @@ public class EditProfileActivity extends AppCompatActivity {
     private String name, username, email, password;
 
     //emulator
-    private String url = "http://10.0.2.2:8000/api/";
+    //private String url = "http://10.0.2.2:8000/api/";
+    private String url = "http://192.168.0.48:8000/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

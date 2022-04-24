@@ -35,7 +35,8 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
     Cat cat;
     Boolean pozitiv;
 
-    private String url = "http://10.0.2.2:8000/api/catAdoptionLoggedin/";
+    //private String url = "http://10.0.2.2:8000/api/catAdoptionLoggedin/";
+    private String url = "http://192.168.0.48:8000/api/catAdoptionLoggedin/";
 
     public CatAdapter(Context context, List<Cat> catList) {
         this.context = context;

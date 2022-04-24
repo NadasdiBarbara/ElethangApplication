@@ -33,7 +33,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramH
     List<Program>programList;
     Program program;
 
-    private String url = "http://10.0.2.2:8000/api/storeProgramApplication";
+    //private String url = "http://10.0.2.2:8000/api/storeProgramApplication";
+    private String url = "http://192.168.0.48:8000/api/storeProgramApplication";
 
     public ProgramAdapter(Context context, List<Program> programList) {
         this.context = context;

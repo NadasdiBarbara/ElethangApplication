@@ -33,9 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
     //laptop
     //private String url = "http://10.148.149.190:8000/api/register";
     //emulator
-    private String url = "http://10.0.2.2:8000/api/register";
+    //private String url = "http://10.0.2.2:8000/api/register";
     //asztali gép
-    //private String url = "http://192.168.0.48:8000/api/register";
+    private String url = "http://192.168.0.48:8000/api/register";
 
 
 
