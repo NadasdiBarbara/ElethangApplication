@@ -68,21 +68,6 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                 alert.setPositiveButton("Virtuális örökbefogadás", (dialogInterface, i) -> {
                     cat = catList.get(position);
                     pozitiv = true;
-                   /* AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
-                        @Override
-                        protected Response doInBackground(Void... voids) {
-                            Response response = null;
-                            try {
-                                response = RequestHandler.postAuth(url+ cat.id,"{\"adoption_type_id\":2}",sharedPreferences.getString("token",""));
-                                Toast.makeText(context.getApplicationContext(), "Ügyes vagy", Toast.LENGTH_SHORT).show();
-                                //Log.d("Response", response.getContent());
-                            } catch (IOException e) {
-                                Log.d("Response error", e.getMessage());
-                            }
-                            return response;
-                        }
-                    };
-                    task.execute();*/
                     RequestTask rt =new RequestTask();
                     rt.execute();
                 });
@@ -90,20 +75,6 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
                 alert.setNegativeButton("Ált.örökbefogadás", (dialogInterface, i) -> {
                     cat = catList.get(position);
                     pozitiv = false;
-                    /*AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>() {
-                        @Override
-                        protected Response doInBackground(Void... voids) {
-                            Response response = null;
-                            try {
-                                response = RequestHandler.postAuth(url+ cat.id,"{\"adoption_type_id\":1}",sharedPreferences.getString("token",""));
-                                Log.d("Response", response.getContent());
-                            } catch (IOException e) {
-                                Log.d("Response error", e.getMessage());
-                            }
-                            return response;
-                        }
-                    };
-                    task.execute();*/
                     RequestTask rt =new RequestTask();
                     rt.execute();
                 });

@@ -66,41 +66,12 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogHolder> {
                 alert.setPositiveButton("Virtuális örökbefogadás", (dialogInterface, i) -> {
                     dog = dogList.get(position);
                     pozitiv = true;
-                    /*AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>(){
-                        @Override
-                        protected Response doInBackground(Void... voids) {
-                            Response response = null;
-                            try {
-                                response = RequestHandler.postAuth(url+ dog.id,"{\"adoption_type_id\":2}",sharedPreferences.getString("token",""));
-                                Log.d("Response", response.getContent());
-                            } catch (IOException e) {
-                                Log.d("Response error", e.getMessage());
-                            }
-                            return response;
-                        }
-                    };
-                    task.execute();*/
-
                     RequestTask task = new RequestTask();
                     task.execute();
                 });
                 alert.setNegativeButton("Általános Örökbefogadás", (dialogInterface, i) -> {
                     dog = dogList.get(position);
                     pozitiv = false;
-                    /*AsyncTask<Void, Void, Response> task = new AsyncTask<Void, Void, Response>(){
-                        @Override
-                        protected Response doInBackground(Void... voids) {
-                            Response response = null;
-                            try {
-                                response = RequestHandler.postAuth(url+ dog.id,"{\"adoption_type_id\":1}",sharedPreferences.getString("token",""));
-                                Log.d("Response", response.getContent());
-                            } catch (IOException e) {
-                                Log.d("Response error", e.getMessage());
-                            }
-                            return response;
-                        }
-                    };
-                    task.execute();*/
                     RequestTask task = new RequestTask();
                     task.execute();
                 });
