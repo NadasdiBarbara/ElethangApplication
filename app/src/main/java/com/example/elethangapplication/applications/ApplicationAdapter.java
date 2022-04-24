@@ -54,22 +54,34 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
 
         switch (applicationsList.get(position).getProgram_info_id()) {
             case 1:
-                holder.application.setText("Kutya fésülés");
+                holder.application.setText("Kutyaterápia gyerekeknek\n\t 2022-06-25 10:00");
                 break;
             case 2:
-                holder.application.setText("kutya sétáltatás");
+                holder.application.setText("Kutyaterápia gyerekeknek\n\t 2022-06-25 12:00");
                 break;
 
             case 3:
-                holder.application.setText("kutya sétáltatás");
+                holder.application.setText("Kutyaterápia gyerekeknek\n\t 2022-06-25 14:00");
                 break;
 
             case 4:
-                holder.application.setText("kutya sétáltatás");
+                holder.application.setText("Kutyaterápia gyerekeknek\n\t 2022-06-25 16:00");
                 break;
 
             case 5:
-                holder.application.setText("Kutya fésülés");
+                holder.application.setText("Kutya sétáltatás\n\t 2022-06-28 10:00");
+                break;
+
+            case 6:
+                holder.application.setText("Kutya sétáltatás\n\t 2022-06-28 12:00");
+                break;
+
+            case 7:
+                holder.application.setText("Kutya sétáltatás\n\t 2022-06-28 14:00");
+                break;
+
+            case 8:
+                holder.application.setText("Kutya sétáltatás\n\t 2022-06-28 16:00");
                 break;
 
             default:
